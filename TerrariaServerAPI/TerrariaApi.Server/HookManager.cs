@@ -20,6 +20,10 @@ namespace TerrariaApi.Server
 		{
 			try
 			{
+				Main.curRelease = 285;
+				Main.versionNumber = "1.4.5.5";
+				Main.versionNumber2 = "v1.4.5.5";
+
 				Console.WriteLine("TerrariaAPI Version: {0} (Protocol {1} ({2}), OTAPI {3})",
 					ServerApi.ApiVersion,
 					Main.versionNumber2,
