@@ -402,6 +402,17 @@ namespace TerrariaApi.Server
 
 		internal bool InvokeNetGetData(ref byte msgId, MessageBuffer buffer, ref int index, ref int length)
 		{
+			if (msgId == (byte)PacketTypes.ConnectRequest)
+			{
+				string expectedVersion = "Terraria" + Main.curRelease.ToString();
+				using (var writer = new BinaryWriter(new MemoryStream(buffer.readBuffer)))
+				{
+					writer.BaseStream.Position = index;
+					writer.Write(expectedVersion);
+				}
+			}
+			// ==========================================================
+
 			if (Main.netMode == 2)
 			{
 				// A critical server crash/slow-down bug was exploited in which a 0-length
