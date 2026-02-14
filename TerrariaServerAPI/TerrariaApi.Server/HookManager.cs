@@ -20,7 +20,6 @@ namespace TerrariaApi.Server
 		{
 			try
 			{
-				Main.curRelease = 285;
 				Main.versionNumber = "1.4.5.5";
 				Main.versionNumber2 = "v1.4.5.5";
 
